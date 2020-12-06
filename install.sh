@@ -58,8 +58,7 @@ mkdir -p /mnt/boot
 mount /dev/sda1 /mnt/boot
 
 # Bootstrap the new system
-pacstrap /mnt base base-devel linux linux-lts linux-firmware btrfs-progs efibootmgr \\
-zsh neovim git networkmanager man-db intel-ucode
+pacstrap /mnt base base-devel linux linux-lts linux-firmware btrfs-progs efibootmgr zsh neovim git man-db intel-ucode
 
 # Generate fstab/crypttab files. Spot check this file to make sure it's correct
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -196,13 +195,6 @@ passwd ---lock root
 # auth       requisite  pam_faillock.so preauth deny=5 unlock_time=300
 # ```
 nvim /etc/pam.d/system-login
-
-##
-# Networking
-##
-
-# Enable networking on reboot
-systemctl enable NetworkManager
 
 ##
 # Cleanup
