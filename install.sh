@@ -165,8 +165,6 @@ mkdir -p /mnt/tmp
 mount /dev/sdxY /mnt/tmp
 cp -r /mnt/tmp/EFI/Microsoft /boot/EFI
 
-# TODO: Enable secure boot
-
 ##
 # Users
 ##
