@@ -99,8 +99,7 @@ echo "KEYMAP=us" > /etc/vconsole.conf
 # HOOKS=(base systemd autodetect keyboard sd-vconsole modconf block sd-encrypt filesystems resume fsck)
 # ```
 nvim /etc/mkinitcpio.conf
-mkinitcpio -p linux
-mkinitcpio -p linux-lts
+mkinitcpio -P
 
 # Install boot loader
 bootctl --path=/boot install
